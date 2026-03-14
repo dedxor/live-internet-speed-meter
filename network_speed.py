@@ -12,15 +12,15 @@ class NetworkSpeed:
     self.last_bytes_recv = net.bytes_recv
  
   def get_speed(self):
-    currenttime = time.time()
+    current_time = time.time()
     net = psutil.net_io_counters()
     current_bytes_sent = net.bytes_sent
     current_bytes_recv = net.bytes_recv
 
     time_diff = current_time - self.last_time
 
-    upload speed = (current_bytes_sent - self.last_bytes_sent)/time_diff
-    download speed = (current_bytes_recv - self.last_bytes_recv)/time/diff
+    upload_speed = (current_bytes_sent - self.last_bytes_sent)/time_diff
+    download_speed = (current_bytes_recv - self.last_bytes_recv)/time_diff
 
     self.last_bytes_sent = current_bytes_sent
     self.last_bytes_recv = current_bytes_recv
